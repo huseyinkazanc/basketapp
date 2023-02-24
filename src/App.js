@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { Container, SimpleGrid, Input } from "@mantine/core";
+import { Button, Container, SimpleGrid, Group, Input } from "@mantine/core";
 import { List } from "@mantine/core";
 import Card from "./components/Card";
 import { useState } from "react";
@@ -45,9 +45,16 @@ function App() {
   );
   return (
     <Container>
-      <Input.Wrapper label="Arama">
-        <Input onChange={(e) => setSearchValue(e.target.value)} />
-      </Input.Wrapper>
+      <Group align="end">
+        <Input.Wrapper label="Arama">
+          <Input
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+        </Input.Wrapper>
+        <Button onClick={() => setSearchValue("")}>Temizle</Button>
+      </Group>
+
       <SimpleGrid cols={3} className="Store">
         {filteredItems.map(({ name, src }) => {
           return (
