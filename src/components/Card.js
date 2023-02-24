@@ -3,18 +3,14 @@ const CardComponent = ({ name, onAdd, src }) => {
   return (
     <Card shadow="sm" p="lg" radius="md" withBorder>
       <Card.Section>
-        <Image
-          src={`/assets/images/" + ${src} + ".jpg`}
-          height={160}
-          alt="Norway"
-        />
+        <Image src={`/assets/images/${src}.jpg`} height={160} alt="Norway" />
       </Card.Section>
 
       <Group position="apart" mt="md" mb="xs">
         <Text weight={500}>{name}</Text>
-        <Badge color="pink" variant="light">
+        {/* <Badge color="pink" variant="light">
           On Sale
-        </Badge>
+        </Badge> */}
       </Group>
 
       <Text size="sm" color="dimmed">
