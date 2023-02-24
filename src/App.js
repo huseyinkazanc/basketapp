@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import {
   Button,
+  Indicator,
   Container,
   Drawer,
   SimpleGrid,
@@ -61,7 +62,9 @@ function App() {
           />
         </Input.Wrapper>
         <Button onClick={() => setSearchValue("")}>Temizle</Button>
-        <Button onClick={() => setOpened(true)}>Sepet</Button>
+        <Indicator color="red" label={basketItems.length} size={22}>
+          <Button onClick={() => setOpened(true)}>Sepet</Button>
+        </Indicator>
       </Group>
 
       <SimpleGrid cols={3} className="Store">
